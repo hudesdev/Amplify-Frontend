@@ -26,7 +26,7 @@ const MessageForm = () => {
             inputRef={register({
               required: "Please enter a message.",
               validate: value =>
-              value.length <= 20 || "No more than 20 characters."
+              value.length <= 30 || "No more than 30 characters."
             })}
             placeholder="New Message"
           />

@@ -35,6 +35,10 @@
   align-items: center;
 }
 
+.message:hover {
+  background-color: RGB(241, 241, 241);
+}
+
 .messagescontainer {
   width: 30%;
   margin-top: 15px;

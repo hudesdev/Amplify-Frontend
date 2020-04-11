@@ -18,8 +18,9 @@ const MessageForm = () => {
     return (
         <div className = "messageform">
             <form onSubmit={handleSubmit(onSubmit)}>
-
+          <div className = "field">
             <TextField
+            fullWidth = "true"
             variant="outlined"
             name="name"
             type="text"
@@ -30,6 +31,7 @@ const MessageForm = () => {
             })}
             placeholder="New Message"
           />
+          </div>
           <br/>
           <p>{errors.name && errors.name.message}</p>
           <Button type="submit" variant = "outlined" color = "primary">

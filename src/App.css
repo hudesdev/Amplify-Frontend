@@ -31,7 +31,7 @@
   margin: 5px;
   border-radius: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
@@ -47,6 +47,10 @@
 
 .messageform {
   margin-top: 20px;
+}
+
+.delete {
+  margin: 10px;
 }
 
 @media (max-width: 600px) {

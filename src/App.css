@@ -48,3 +48,9 @@
 .messageform {
   margin-top: 20px;
 }
+
+@media (max-width: 600px) {
+  .messagescontainer {
+    width: 60%;
+  }
+}

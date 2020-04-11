@@ -6,13 +6,13 @@ const Messages = () => {
     const [messages, setMessages] = useState([]);
     const [seconds, setSeconds] = useState(0);
 
-    // useEffect(() => {
-    //     const timer = setInterval(() => {      
-    //         setSeconds(seconds + 1);
-    //     }, 1000);
+    useEffect(() => {
+        const timer = setInterval(() => {      
+            setSeconds(seconds + 1);
+        }, 1000);
 
-    //     return () => clearInterval(timer);
-    // });
+        return () => clearInterval(timer);
+    });
 
     useEffect(() => {
         axios.get("https://wraith-test.herokuapp.com/api/users")

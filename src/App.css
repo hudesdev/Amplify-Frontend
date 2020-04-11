@@ -57,6 +57,11 @@
   margin: 15px;
 }
 
+.messageform p {
+  color: RGB(245, 0, 87);
+  font-size: 0.8rem;
+}
+
 @media (max-width: 600px) {
   .messagescontainer {
     width: 80%;

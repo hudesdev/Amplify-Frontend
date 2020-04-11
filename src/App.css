@@ -31,7 +31,7 @@
   margin: 5px;
   border-radius: 10px;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -55,6 +55,6 @@
 
 @media (max-width: 600px) {
   .messagescontainer {
-    width: 75%;
+    width: 80%;
   }
 }

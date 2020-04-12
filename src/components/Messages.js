@@ -26,7 +26,7 @@ const Messages = () => {
         axios.get("https://wraith-test.herokuapp.com/api/users")
         // .then(sleeper(4000))
         .then(res => {
-            res.data.length >= 7 ? setMessages(res.data.slice(res.data.length - 7, res.data.length)) : setMessages(res.data);
+            res.data.length >= 6 ? setMessages(res.data.slice(res.data.length - 6, res.data.length)) : setMessages(res.data);
             setLoaded(true);
         })
         .catch(err => console.log(err));

@@ -35,6 +35,12 @@
   align-items: center;
 }
 
+.timestamp {
+  font-size: 0.7rem;
+  margin-right: 20px;
+  color: gray;
+}
+
 .messagescontainer {
   width: 30%;
   margin-top: 15px;

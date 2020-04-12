@@ -39,6 +39,9 @@ const Messages = () => {
             {!loaded ? <CircularProgress color="secondary" /> :
             messages.map(message => (
                 <div key = {message.id} className = "message">
+                    <div className = "timestamp">
+                    <p>3:05 PM</p>
+                    </div>
                      <p>{message.name}</p>
                 <IconButton aria-label="delete" color = "secondary" size = "small">
                     <DeleteIcon className = "delete" onClick = {() => axios.delete(`https://wraith-test.herokuapp.com/api/users/${message.id}`)} />

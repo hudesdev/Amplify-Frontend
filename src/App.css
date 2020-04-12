@@ -64,6 +64,12 @@
   font-size: 0.8rem;
 }
 
+#typing {
+  font-size: 0.8rem;
+  color: gray;
+  font-style: italic;
+}
+
 @media (max-width: 600px) {
   .messagescontainer {
     width: 80%;

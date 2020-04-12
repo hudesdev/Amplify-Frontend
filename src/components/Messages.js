@@ -10,13 +10,13 @@ const Messages = () => {
     const [seconds, setSeconds] = useState(0);
     const [loaded, setLoaded] = useState(false);
 
-    useEffect(() => {
-        const timer = setInterval(() => {      
-            setSeconds(seconds + 1);
-        }, 1000);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {      
+    //         setSeconds(seconds + 1);
+    //     }, 1000);
 
-        return () => clearInterval(timer);
-    });
+    //     return () => clearInterval(timer);
+    // });
 
     function sleeper(ms) {
         return function(x) {
@@ -48,6 +48,7 @@ const Messages = () => {
                     </IconButton>
                 </div>
             ))}
+            <p id = "typing">Someone is typing...</p>
             <MessageForm />
         </div>
     );

@@ -4,6 +4,7 @@ import MessageForm from "./MessageForm";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import moment from "moment";
 
 const Messages = () => {
     const [messages, setMessages] = useState([]);
@@ -11,19 +12,19 @@ const Messages = () => {
     const [loaded, setLoaded] = useState(false);
     const [typing, setTyping] = useState(false);
 
-    // useEffect(() => {
-    //     const timer = setInterval(() => {      
-    //         setSeconds(seconds + 1);
-    //     }, 1000);
+    useEffect(() => {
+        const timer = setInterval(() => {      
+            setSeconds(seconds + 1);
+        }, 1000);
 
-    //     return () => clearInterval(timer);
-    // });
+        return () => clearInterval(timer);
+    });
 
     const sleeper = ms => x => new Promise(resolve => setTimeout(() => resolve(x), ms));
-    
+
     useEffect(() => {
         axios.get("https://wraith-test.herokuapp.com/api/users")
-        .then(sleeper(4000))
+        // .then(sleeper(4000))
         .then(res => {
             res.data.length >= 7 ? setMessages(res.data.slice(res.data.length - 7, res.data.length)) : setMessages(res.data);
             setLoaded(true);
@@ -34,7 +35,7 @@ const Messages = () => {
     useEffect(() => {
         setTimeout(() => {
             setTyping(!typing);
-          }, 2000);
+          }, Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000);
     }, [typing]);
 
     return (
@@ -43,7 +44,7 @@ const Messages = () => {
             messages.map(message => (
                 <div key = {message.id} className = "message">
                     <div className = "timestamp">
-                    <p>3:05 PM</p>
+                    <p>{moment().format('LT')}</p>
                     </div>
                      <p>{message.name}</p>
                 <IconButton aria-label="delete" color = "secondary" size = "small">

@@ -15,7 +15,7 @@ const Messages = () => {
     useEffect(() => {
         const timer = setInterval(() => {      
             setSeconds(seconds + 1);
-        }, 1000);
+        }, 500);
 
         return () => clearInterval(timer);
     });

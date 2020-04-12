@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-     <p>Z Chat</p>
+     <p>Messages</p>
       </header>
       <div className = "App-body">
       <div className = "messagescontainer">

@@ -52,7 +52,7 @@ const Messages = () => {
                     </IconButton>
                 </div>
             ))}
-            {typing && loaded ? <p id = "typing">Someone is typing...</p> : null}
+            {typing && loaded ? <p id = "typing">Someone is typing...</p> : <p id = "typing">&nbsp;</p>}
             <MessageForm />
         </div>
     );

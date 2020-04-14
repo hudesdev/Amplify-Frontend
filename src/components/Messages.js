@@ -46,6 +46,9 @@ const Messages = () => {
                     <div className = "timestamp">
                     <p>{moment().format('LT')}</p>
                     </div>
+                    <div className = "username">
+                    <p>Zahid:</p>
+                    </div>
                      <p>{message.name}</p>
                 <IconButton aria-label="delete" color = "secondary" size = "small">
                     <DeleteIcon className = "delete" onClick = {() => axios.delete(`https://wraith-test.herokuapp.com/api/users/${message.id}`)} />

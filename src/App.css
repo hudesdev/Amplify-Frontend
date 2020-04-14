@@ -41,6 +41,11 @@
   color: gray;
 }
 
+.username {
+  margin-right: 5px;
+  font-weight: 500;
+}
+
 .messagescontainer {
   width: 30%;
   margin-top: 15px;

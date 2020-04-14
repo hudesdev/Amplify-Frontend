@@ -31,13 +31,20 @@
   margin: 10px;
   border-radius: 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.message .delete {
+  position: fixed;
+  right: 0;
+  left: 25%;
 }
 
 .timestamp {
   font-size: 0.7rem;
   margin-right: 20px;
+  margin-left: 20px;
   color: gray;
 }
 
@@ -56,10 +63,6 @@
   justify-content: center;
 }
 
-.delete {
-  margin: 10px;
-}
-
 .messageform p {
   color: RGB(245, 0, 87);
   font-size: 0.8rem;
@@ -74,5 +77,10 @@
 @media (max-width: 600px) {
   .messagescontainer {
     width: 90%;
+  }
+  .message .delete {
+    position: fixed;
+    right: 0;
+    left: 75%;
   }
 }

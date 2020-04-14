@@ -50,9 +50,11 @@ const Messages = () => {
                     <p>Zahid:</p>
                     </div>
                      <p>{message.name}</p>
-                <IconButton aria-label="delete" color = "secondary" size = "small">
-                    <DeleteIcon className = "delete" onClick = {() => axios.delete(`https://wraith-test.herokuapp.com/api/users/${message.id}`)} />
-                    </IconButton>
+                     <div className = "delete">
+                 <IconButton aria-label="delete" color = "secondary" size = "small">
+                     <DeleteIcon onClick = {() => axios.delete(`https://wraith-test.herokuapp.com/api/users/${message.id}`)} />
+                     </IconButton>
+                     </div>
                 </div>
             ))}
             {typing && loaded ? <p id = "typing">Someone is typing...</p> : <p id = "typing">&nbsp;</p>}

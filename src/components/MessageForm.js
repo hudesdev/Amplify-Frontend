@@ -9,7 +9,7 @@ const MessageForm = () => {
 
     const onSubmit = (values, e) => {
         console.log(values);
-        axios.post("https://wraith-test.herokuapp.com/api/users", values)
+        axios.post("https://chat-app-z.herokuapp.com/api/messages", values)
         .then(res => console.log(res))
         .catch(err => console.log(err));
         e.target.reset();
@@ -22,7 +22,7 @@ const MessageForm = () => {
             <TextField
             fullWidth = "true"
             variant="outlined"
-            name="name"
+            name="message"
             type="text"
             inputRef={register({
               required: "Please enter a message.",
@@ -32,7 +32,7 @@ const MessageForm = () => {
             placeholder="New Message"
           />
           </div>
-          <p>{errors.name && errors.name.message}</p>
+          <p>{errors.message && errors.message.message}</p>
           <Button type="submit" variant = "contained" color = "secondary">
             Send
           </Button>

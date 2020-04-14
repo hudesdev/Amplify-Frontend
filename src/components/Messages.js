@@ -23,10 +23,10 @@ const Messages = () => {
     const sleeper = ms => x => new Promise(resolve => setTimeout(() => resolve(x), ms));
 
     useEffect(() => {
-        axios.get("https://wraith-test.herokuapp.com/api/users")
+        axios.get("https://chat-app-z.herokuapp.com/api/messages")
         // .then(sleeper(4000))
         .then(res => {
-            res.data.length >= 6 ? setMessages(res.data.slice(res.data.length - 6, res.data.length)) : setMessages(res.data);
+            setMessages(res.data);
             setLoaded(true);
         })
         .catch(err => console.log(err));
@@ -44,15 +44,15 @@ const Messages = () => {
             messages.map(message => (
                 <div key = {message.id} className = "message">
                     <div className = "timestamp">
-                    <p>{moment().format('LT')}</p>
+                    <p>{message.created_at}</p>
                     </div>
                     <div className = "username">
                     <p>Zahid:</p>
                     </div>
-                     <p>{message.name}</p>
+                     <p>{message.message}</p>
                      <div className = "delete">
                  <IconButton aria-label="delete" color = "secondary" size = "small">
-                     <DeleteIcon onClick = {() => axios.delete(`https://wraith-test.herokuapp.com/api/users/${message.id}`)} />
+                     <DeleteIcon onClick = {() => axios.delete(`https://chat-app-z.herokuapp.com/api/messages/${message.id}`)} />
                      </IconButton>
                      </div>
                 </div>

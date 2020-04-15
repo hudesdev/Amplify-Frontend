@@ -4,11 +4,13 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 
-const MessageForm = () => {
+const MessageForm = ({ userid }) => {
     const { handleSubmit, register, errors, reset } = useForm();
 
     const onSubmit = (values, e) => {
-        console.log(values);
+        if(userid) {
+        values.username = userid;
+        } 
         axios.post("https://chat-app-z.herokuapp.com/api/messages", values)
         .then(res => console.log(res))
         .catch(err => console.log(err));
@@ -25,7 +27,7 @@ const MessageForm = () => {
             name="message"
             type="text"
             inputRef={register({
-              required: "Please enter a message.",
+              required: "Enter a message.",
               validate: value =>
               value.length <= 30 || "No more than 30 characters."
             })}

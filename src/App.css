@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 25px;
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -41,11 +41,36 @@
   left: 25%;
 }
 
+#usermessage {
+  overflow: hidden;
+}
+
 .timestamp {
   font-size: 0.7rem;
   margin-right: 20px;
   margin-left: 20px;
   color: gray;
+}
+
+.userfield {
+  display: flex;
+  justify-content: center;
+}
+
+.userform {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#welcome {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.822);
+}
+
+.userfield p {
+  color: RGB(245, 0, 87);
+  font-size: 0.8rem;
 }
 
 .username {
@@ -54,7 +79,7 @@
 }
 
 .messagescontainer {
-  width: 30%;
+  width: 40%;
   margin-top: 15px;
 }
 
@@ -72,15 +97,50 @@
   font-size: 0.8rem;
   color: gray;
   font-style: italic;
+  margin: 0px;
+}
+
+.signout {
+  font-size: 0.65rem;
+  font-weight: 600;
+  height: 25px;
+  margin-top: 10px;
+  color: white;
+  background-color: rgb(75, 209, 164);
+  border: none;
+  border-radius: 10px;
+}
+
+.signout:hover {
+  background-color: rgb(112, 226, 188);
 }
 
 @media (max-width: 600px) {
   .messagescontainer {
-    width: 90%;
+    width: 95%;
+    margin-top: 10px;
   }
-  .message .delete {
-    position: fixed;
-    right: 0;
-    left: 75%;
+  #usermessage {
+    font-size: 0.9rem;
+  }
+  #writer {
+    font-size: 0.9rem;
+  }
+  .timestamp {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .App-header {
+    height: 50px;
+  }
+  #welcome {
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+  .signout {
+    font-size: 0.6rem;
+    font-weight: 600;
+    height: 25px;
+    margin-top: 10px;
   }
 }

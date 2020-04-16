@@ -145,4 +145,7 @@
     height: 25px;
     margin-top: 10px;
   }
+  .App-header {
+    height: 50px;
+  }
 }

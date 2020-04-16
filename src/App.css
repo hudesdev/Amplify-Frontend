@@ -80,7 +80,6 @@
 
 .messagescontainer {
   width: 40%;
-  margin-top: 15px;
 }
 
 .App-body {
@@ -93,10 +92,17 @@
   font-size: 0.8rem;
 }
 
-#typing {
+.field {
+  width: 95%;
+}
+
+.fieldcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+#temp {
   font-size: 0.8rem;
-  color: gray;
-  font-style: italic;
   margin: 0px;
 }
 
@@ -117,8 +123,7 @@
 
 @media (max-width: 600px) {
   .messagescontainer {
-    width: 95%;
-    margin-top: 10px;
+    width: 100%;
   }
   #usermessage {
     font-size: 0.9rem;
@@ -129,9 +134,6 @@
   .timestamp {
     margin-right: 10px;
     margin-left: 10px;
-  }
-  .App-header {
-    height: 50px;
   }
   #welcome {
     margin-bottom: 15px;

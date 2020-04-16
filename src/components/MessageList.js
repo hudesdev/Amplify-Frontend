@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import moment from "moment";
 import "moment-timezone";
 
 const MessageList = ({ messages }) => {
     return (
-        <div>
+        <div className = "messagelist">
               {messages.map(message => (
                 <div key = {message.id} className = "message">
                     <div className = "timestamp">

@@ -20,6 +20,7 @@ const MessageForm = ({ userid }) => {
     return (
         <div className = "messageform">
             <form onSubmit={handleSubmit(onSubmit)}>
+              <div className = "fieldcontainer">
           <div className = "field">
             <TextField
             fullWidth = "true"
@@ -27,12 +28,13 @@ const MessageForm = ({ userid }) => {
             name="message"
             type="text"
             inputRef={register({
-              required: "Enter a message.",
+              required: " ",
               validate: value =>
               value.length <= 30 || "No more than 30 characters."
             })}
             placeholder="New Message"
           />
+          </div>
           </div>
           <p>{errors.message && errors.message.message}</p>
           <Button type="submit" variant = "contained" color = "secondary">

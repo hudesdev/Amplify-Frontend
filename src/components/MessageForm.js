@@ -1,8 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import axios from "axios";
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 const MessageForm = ({ userid }) => {
     const { handleSubmit, register, errors, reset } = useForm();
@@ -14,14 +14,14 @@ const MessageForm = ({ userid }) => {
         axios.post("https://chat-app-z.herokuapp.com/api/messages", values)
         .then(res => console.log(res))
         .catch(err => console.log(err));
-        e.target.reset();
+        reset();
     };
 
     return (
         <div className = "messageform">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className = "fieldcontainer">
-          <div className = "field">
+          <div style={{position: 'relative', display: 'inline-block'}} className = "field">
             <TextField
             fullWidth = "true"
             variant="outlined"
@@ -30,16 +30,14 @@ const MessageForm = ({ userid }) => {
             inputRef={register({
               required: " ",
               validate: value =>
-              value.length <= 30 || "No more than 30 characters."
+              value.length <= 35 || "No more than 35 characters."
             })}
-            placeholder="New Message"
+            placeholder="Enter a message"
           />
+          <ArrowDownwardIcon className = "arrow"onClick = {handleSubmit(onSubmit)} style = {{ position: 'absolute', right: 15, top: 15, width: 25, height: 25, color: "RGB(245,0,87)", transform: "scaleY(-1" }} />
           </div>
           </div>
           <p>{errors.message && errors.message.message}</p>
-          <Button type="submit" variant = "contained" color = "secondary">
-            Send
-          </Button>
 
             </form>
             </div>

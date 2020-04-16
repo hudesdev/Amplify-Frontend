@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MessageForm from "./MessageForm";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import UserForm from "./UserForm";
 import MessageList from "./MessageList";
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { css } from 'glamor';
@@ -33,7 +32,7 @@ const Messages = () => {
     }, [seconds]);
 
     const ROOT_CSS = css({
-        height: 475
+        height: "75vh"
       });
 
     return (

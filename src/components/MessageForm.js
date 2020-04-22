@@ -9,6 +9,7 @@ const MessageForm = ({ token }) => {
     const { handleSubmit, register, errors, reset } = useForm();
 
     useEffect(() => {
+      // This is a default, generic token - not sensitive
       window.localStorage.setItem("token", JSON.stringify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJuYW1lIjoiR3Vlc3QiLCJpYXQiOjE1ODc1Njg1NzJ9.eOqAdf-ud-X35bs3Xzj-FySYDEmGYIxMMJUQzYadXIA"));
     }, []);
 

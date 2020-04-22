@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Messages from "./components/Messages";
+import Register from "./components/Register";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <div className = "App-body">
       <div className = "messagescontainer">
       <Messages/>
+      <Register />
+      <Login />
       </div>
       </div>
     </div>

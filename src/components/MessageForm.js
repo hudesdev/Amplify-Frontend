@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+const jwt = require("jsonwebtoken");
 
-const MessageForm = ({ userid }) => {
+const MessageForm = ({ token }) => {
     const { handleSubmit, register, errors, reset } = useForm();
 
+    useEffect(() => {
+      window.localStorage.setItem("token", JSON.stringify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJuYW1lIjoiR3Vlc3QiLCJpYXQiOjE1ODc1Njg1NzJ9.eOqAdf-ud-X35bs3Xzj-FySYDEmGYIxMMJUQzYadXIA"));
+    }, []);
+
     const onSubmit = (values, e) => {
-        if(userid) {
-        values.username = userid;
-        } 
-        axios.post("https://chat-app-z.herokuapp.com/api/messages", values)
+        if(token) {
+        let decoded = jwt.decode(JSON.parse(token));
+        values.username = decoded.username;
+        axios.post("http://localhost:8000/api/messages", values, {headers: { authorization : JSON.parse(window.localStorage.getItem("token")) }})
         .then(res => console.log(res))
         .catch(err => console.log(err));
         reset();
+        }
     };
 
     return (

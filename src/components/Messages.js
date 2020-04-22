@@ -22,7 +22,7 @@ const Messages = () => {
     // const sleeper = ms => x => new Promise(resolve => setTimeout(() => resolve(x), ms));
 
     useEffect(() => {
-        axios.get("https://chat-app-z.herokuapp.com/api/messages")
+        axios.get("http://localhost:8000/api/messages")
         // .then(sleeper(4000))
         .then(res => {
             setMessages(res.data);
@@ -42,7 +42,7 @@ const Messages = () => {
             <MessageList messages = {messages} />
             </ScrollToBottom>}
             {loaded ? <p id = "temp">&nbsp;</p> : <p id = "temp">&nbsp;</p>}
-            <MessageForm userid = {window.localStorage.getItem("username")} />
+            <MessageForm token = {window.localStorage.getItem("token")} />
              {/* {window.localStorage.getItem("username") ? <h3 id = "welcome" >Welcome, {window.localStorage.getItem("username")}! <br/> <button onClick = {() => localStorage.removeItem("username")} className = "signout">Not {window.localStorage.getItem("username")}?</button></h3> : 
             <div className = "userform"> <UserForm /> </div>} */}
         </div>

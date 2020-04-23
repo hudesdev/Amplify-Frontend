@@ -8,7 +8,7 @@ const Login = () => {
 
   const onSubmit = data => { 
     data.username = data.username.toLowerCase();
-    axios.post("http://localhost:8000/api/auth/login", data)
+    axios.post("https://chat-app-z.herokuapp.com/api/auth/login", data)
     .then(res => {
         window.localStorage.setItem("token", JSON.stringify(res.data.token));
     })

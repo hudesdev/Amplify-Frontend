@@ -33,7 +33,7 @@ const Messages = () => {
     }, [seconds]);
 
     const ROOT_CSS = css({
-        height: "60vh"
+        height: "57.5vh"
       });
 
     return (

@@ -8,6 +8,7 @@ const Login = () => {
 
   const onSubmit = data => { 
     console.log("Login data", data)
+    data.username = data.username.toLowerCase();
     axios.post("http://localhost:8000/api/auth/login", data)
     .then(res => {
         console.log("Axios response", res.data);

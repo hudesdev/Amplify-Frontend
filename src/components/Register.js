@@ -8,6 +8,7 @@ const Register = () => {
 
   const onSubmit = data => { 
     console.log("Register data", data)
+    data.username = data.username.toLowerCase();
     axios.post("http://localhost:8000/api/auth/register", data)
     .then(res => console.log("Axios response", res))
     .catch(err => console.log("Axios error", err));

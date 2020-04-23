@@ -63,12 +63,6 @@
   margin-bottom: 20px;
 }
 
-#welcome {
-  margin-bottom: 30px;
-  margin-top: 10px;
-  color: rgba(0, 0, 0, 0.822);
-}
-
 .userfield p {
   color: RGB(245, 0, 87);
   font-size: 0.8rem;
@@ -102,9 +96,10 @@
   justify-content: center;
 }
 
-#temp {
+.welcomemessage {
   font-size: 0.8rem;
-  margin: 0px;
+  font-style: italic;
+  color: gray;
 }
 
 .signout {
@@ -135,10 +130,6 @@
   .timestamp {
     margin-right: 10px;
     margin-left: 10px;
-  }
-  #welcome {
-    margin-bottom: 15px;
-    margin-top: 5px;
   }
   .signout {
     font-size: 0.6rem;

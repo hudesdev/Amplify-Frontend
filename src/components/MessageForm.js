@@ -9,8 +9,8 @@ const MessageForm = ({ token }) => {
     const { handleSubmit, register, errors, reset } = useForm();
 
     useEffect(() => {
-      // This is a default, generic token - not sensitive
-      window.localStorage.setItem("token", JSON.stringify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsInVzZXJuYW1lIjoiR3Vlc3QiLCJpYXQiOjE1ODc1Njg1NzJ9.eOqAdf-ud-X35bs3Xzj-FySYDEmGYIxMMJUQzYadXIA"));
+      // This is a default, generic token for guests. Not sensitive
+      window.localStorage.setItem("token", JSON.stringify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJuYW1lIjoiZ3Vlc3QiLCJpYXQiOjE1ODc2MDIxODZ9.Xp3OZiPzn4ZYa4uppc14apX1dnaRWXGk4958gB8EgD0"));
     }, []);
 
     const onSubmit = (values, e) => {

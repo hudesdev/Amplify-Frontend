@@ -5,6 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import MessageList from "./MessageList";
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { css } from 'glamor';
+const jwt = require("jsonwebtoken");
 
 const Messages = () => {
     const [messages, setMessages] = useState([]);
@@ -41,10 +42,8 @@ const Messages = () => {
             <ScrollToBottom className={ ROOT_CSS } >
             <MessageList messages = {messages} />
             </ScrollToBottom>}
-            {loaded ? <p id = "temp">&nbsp;</p> : <p id = "temp">&nbsp;</p>}
+            {loaded ? <p class = "welcomemessage">Welcome, {jwt.decode(JSON.parse(window.localStorage.getItem("token"))).username}! </p> : null}
             <MessageForm token = {window.localStorage.getItem("token")} />
-             {/* {window.localStorage.getItem("username") ? <h3 id = "welcome" >Welcome, {window.localStorage.getItem("username")}! <br/> <button onClick = {() => localStorage.removeItem("username")} className = "signout">Not {window.localStorage.getItem("username")}?</button></h3> : 
-            <div className = "userform"> <UserForm /> </div>} */}
         </div>
     );
 };

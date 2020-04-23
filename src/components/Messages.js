@@ -23,7 +23,7 @@ const Messages = () => {
     // const sleeper = ms => x => new Promise(resolve => setTimeout(() => resolve(x), ms));
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/messages")
+        axios.get("https://chat-app-z.herokuapp.com/api/messages")
         // .then(sleeper(4000))
         .then(res => {
             setMessages(res.data);

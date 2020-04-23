@@ -17,7 +17,7 @@ const MessageForm = ({ token }) => {
         if(token) {
         let decoded = jwt.decode(JSON.parse(token));
         values.username = decoded.username;
-        axios.post("http://localhost:8000/api/messages", values, {headers: { authorization : JSON.parse(window.localStorage.getItem("token")) }})
+        axios.post("https://chat-app-z.herokuapp.com/api/messages", values, {headers: { authorization : JSON.parse(window.localStorage.getItem("token")) }})
         .then(res => console.log(res))
         .catch(err => console.log(err));
         reset();

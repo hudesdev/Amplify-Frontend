@@ -16,6 +16,10 @@ function App() {
       <RegisterModal isRegister = {isRegister} hide = {toggleRegister} />
       <button className = "authbutton" onClick={toggleLogin}>Login</button>
       <LoginModal isLogin = {isLogin} hide = {toggleLogin} />
+      <button className = "authbutton" onClick = {() => {
+        window.localStorage.removeItem("token");
+        window.location.reload(false);
+      }}>Logout</button>
       </div>
       <header className="App-header">
         <p>Messages</p>

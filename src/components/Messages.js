@@ -42,7 +42,7 @@ const Messages = () => {
             <ScrollToBottom className={ ROOT_CSS } >
             <MessageList messages = {messages} />
             </ScrollToBottom>}
-            {loaded ? <p class = "welcomemessage">Welcome, {jwt.decode(JSON.parse(window.localStorage.getItem("token"))).username}! </p> : null}
+            {window.localStorage.getItem("token") ? <p class = "welcomemessage">Welcome, {jwt.decode(JSON.parse(window.localStorage.getItem("token"))).username}! </p> : null}
             <MessageForm token = {window.localStorage.getItem("token")} />
         </div>
     );

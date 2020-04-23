@@ -7,11 +7,9 @@ const Login = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = data => { 
-    console.log("Login data", data)
     data.username = data.username.toLowerCase();
     axios.post("http://localhost:8000/api/auth/login", data)
     .then(res => {
-        console.log("Axios response", res.data);
         window.localStorage.setItem("token", JSON.stringify(res.data.token));
     })
     .catch(err => console.log("Axios error", err));

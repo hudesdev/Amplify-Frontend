@@ -20,6 +20,17 @@
   transition: 0.3s;
 }
 
+.auth {
+  font-size: 15px;
+}
+
+.authbuttons {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -102,19 +113,60 @@
   color: gray;
 }
 
-.signout {
-  font-size: 0.65rem;
-  font-weight: 600;
-  height: 25px;
-  margin-top: 10px;
-  color: white;
-  background-color: rgb(75, 209, 164);
-  border: none;
+.register, .login {
+  margin: 20px;
+}
+
+.authbuttons {
   border-radius: 10px;
 }
 
-.signout:hover {
-  background-color: rgb(112, 226, 188);
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background: white;
+  position: relative;
+  margin: 1.75rem auto;
+  border-radius: 3px;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  opacity: .3;
+  cursor: pointer;
+  border: none;
 }
 
 @media (max-width: 600px) {

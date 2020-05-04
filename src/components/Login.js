@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form'
 import axios from "axios";
 import { Hidden } from '@material-ui/core';
@@ -6,6 +6,7 @@ import { Hidden } from '@material-ui/core';
 const Login = ({ hide }) => {
 
   const { register, handleSubmit, reset } = useForm();
+  const [loginError, setLoginError] = useState(false);
 
   const onSubmit = data => { 
     data.username = data.username.toLowerCase();
@@ -14,7 +15,10 @@ const Login = ({ hide }) => {
         window.localStorage.setItem("token", JSON.stringify(res.data.token));
         hide();
     })
-    .catch(err => console.log("Axios error", err));
+    .catch(err => {
+      console.log("Axios error", err);
+      setLoginError(true);
+    });
     reset();
   }
 
@@ -27,6 +31,7 @@ const Login = ({ hide }) => {
       <input name="password" ref={register({ required: true })} placeholder = "Password" type = "password" />
       <br/>
       <button type = "submit">Login</button>
+      {loginError ? <p id = "loginerror">Invalid login.</p> : null}
     </form>
     </div>
   )

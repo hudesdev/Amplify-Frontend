@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from "axios";
 
 const Register = ( { hide } ) => {
 
   const { register, handleSubmit, reset } = useForm()
+  const [registerError, setRegisterError] = useState(false);
 
   const onSubmit = data => { 
     data.username = data.username.toLowerCase();
@@ -13,7 +14,10 @@ const Register = ( { hide } ) => {
       console.log("Axios response", res);
       hide();
     })
-    .catch(err => console.log("Axios error", err));
+    .catch(err => {
+      console.log("Axios error", err);
+      setRegisterError(true);
+    });
     reset();
   }
 
@@ -26,6 +30,7 @@ const Register = ( { hide } ) => {
       <input name="password" ref={register({ required: true })} placeholder = "Password" type = "password" />
       <br/>
       <button type = "submit">Register</button>
+      {registerError ? <p id = "registererror">Username taken.</p> : null}
     </form>
     </div>
   )

@@ -169,6 +169,11 @@
   border: none;
 }
 
+#registererror, #loginerror {
+  color: red;
+  font-style: italic;
+}
+
 @media (max-width: 600px) {
   .messagescontainer {
     width: 100%;

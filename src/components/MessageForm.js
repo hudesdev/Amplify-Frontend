@@ -9,7 +9,7 @@ const MessageForm = ({ token }) => {
     const { handleSubmit, register, errors, reset } = useForm();
 
     useEffect(() => {
-      window.localStorage.setItem("token", JSON.stringify(process.env.TOKEN));
+      window.localStorage.setItem("token", JSON.stringify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJuYW1lIjoiZ3Vlc3QiLCJpYXQiOjE1ODg2MzM4NTh9.MyGNelapirb9biOnnvRreHQ5ILSkWF6tupJDT5SAOsc"));
     }, []);
 
     const onSubmit = (values, e) => {

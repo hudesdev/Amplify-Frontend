@@ -2,14 +2,17 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import axios from "axios";
 
-const Register = () => {
+const Register = ( { hide } ) => {
 
   const { register, handleSubmit, reset } = useForm()
 
   const onSubmit = data => { 
     data.username = data.username.toLowerCase();
     axios.post("https://chat-app-z.herokuapp.com/api/auth/register", data)
-    .then(res => console.log("Axios response", res))
+    .then(res => {
+      console.log("Axios response", res);
+      hide();
+    })
     .catch(err => console.log("Axios error", err));
     reset();
   }

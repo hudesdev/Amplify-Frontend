@@ -12,7 +12,7 @@ const LoginModal = ({ isLogin, hide }) => isLogin ? ReactDOM.createPortal(
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <Login />
+        <Login hide = {hide} />
       </div>
     </div>
   </React.Fragment>, document.body

@@ -12,7 +12,7 @@ const RegisterModal = ({ isRegister, hide }) => isRegister ? ReactDOM.createPort
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <Register />
+        <Register hide = {hide} />
       </div>
     </div>
   </React.Fragment>, document.body

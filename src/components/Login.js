@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import axios from "axios";
+import { Hidden } from '@material-ui/core';
 
-const Login = () => {
+const Login = ({ hide }) => {
 
   const { register, handleSubmit, reset } = useForm();
 
@@ -11,6 +12,7 @@ const Login = () => {
     axios.post("https://chat-app-z.herokuapp.com/api/auth/login", data)
     .then(res => {
         window.localStorage.setItem("token", JSON.stringify(res.data.token));
+        hide();
     })
     .catch(err => console.log("Axios error", err));
     reset();

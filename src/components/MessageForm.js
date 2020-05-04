@@ -9,8 +9,7 @@ const MessageForm = ({ token }) => {
     const { handleSubmit, register, errors, reset } = useForm();
 
     useEffect(() => {
-      // This is a default, generic token for guests. Not sensitive
-      window.localStorage.setItem("token", JSON.stringify("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJuYW1lIjoiZ3Vlc3QiLCJpYXQiOjE1ODc2MDIxODZ9.Xp3OZiPzn4ZYa4uppc14apX1dnaRWXGk4958gB8EgD0"));
+      window.localStorage.setItem("token", JSON.stringify(process.env.TOKEN));
     }, []);
 
     const onSubmit = (values, e) => {

@@ -24,6 +24,10 @@
   font-size: 15px;
 }
 
+.feedheight {
+  height: 57.5vh;
+}
+
 .authbuttons {
   margin: 5px;
   display: flex;
